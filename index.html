@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<div id="regles">
+    <div class="overlay_wrapper">
+        <img id="img_regles1" src="images/regles1.png">
+        <img id="img_regles2" src="images/regles2.png">
+        <img id="img_regles3" src="images/regles3.png">
+    </div>
+    <div id="regles_buttons">
+        <div id="help_page1" class="btnn"><p>Page 1</p></div>
+        <div id="help_page2" class="btnn"><p>Page 2</p></div>
+        <div id="help_page3" class="btnn"><p>Page 3</p></div>
+        <div id="help_close" class="btnn"><p>Fermer les règles</p></div>
+    </div>
+</div>
+
+<div id="GameTable"></div>
+<div id="PlayersSide">
+    <div id="PlayersSide_container">
+        <div id="header_buttons">
+            <div id="help_panel" class="btnn">
+                <p>?</p>
+            </div>
+
+            <div id="load_game" class="btnn">
+                <img src="images/load.png">
+            </div>
+
+            <div id="save_game" class="btnn">
+                <img src="images/floppy.svg">
+            </div>
+        </div>
+
+        <img id="qwirkle_logo" src="images/logo.png">
+        <form method='GET' name="formulaire"> 
+            <label class="11">Combien de joueurs ?</label>
+            <input type="radio" id="radio_nbjoueurs" name="radio_nbjoueurs" value="2" checked>2
+            <input type="radio" id="radio_nbjoueurs" name="radio_nbjoueurs" value="3" >3
+            <input type="radio" id="radio_nbjoueurs" name="radio_nbjoueurs" value="4" >4
+        </form>
+        <div id="noms_joueurs_inputs">
+            
+        </div>
+        <p class="Bouton" id="bouton">
+            <input type="submit" name="lancer_partie" id="lancer_partie" value="Lancer la partie" onclick="creer_partie();"/>
+        </p>
+        <div id="EmplacementJoueurs"></div>
+    </div>
+</div>
+
+  <div id="notification"><p>TOAST MESSAGE</p></div>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+<!-- Mettre un bouton aide--> 
+</html>
+
