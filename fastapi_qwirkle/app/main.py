@@ -9,7 +9,7 @@ from fastapi.encoders import jsonable_encoder
 app = FastAPI(docs_url="/abcde", redoc_url=None)
 
 cors_origins = [
-    "http://bymariie.github.io"
+    "http://mmargueritat.github.io"
 ]
 
 app.add_middleware(
