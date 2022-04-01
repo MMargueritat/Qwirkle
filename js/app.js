@@ -1,9 +1,13 @@
 /* ------------------------------------QWIRKLE------------------------------------ */
 
+JS_COOKIES = require('js-cookie')
+
 function regles_page(n) {
+    document.getElementById("img_regles0").style.display="none";
     document.getElementById("img_regles1").style.display="none";
     document.getElementById("img_regles2").style.display="none";
     document.getElementById("img_regles3").style.display="none";
+    document.getElementById("help_page0").style.background="transparent";
     document.getElementById("help_page1").style.background="transparent";
     document.getElementById("help_page2").style.background="transparent";
     document.getElementById("help_page3").style.background="transparent";
@@ -12,7 +16,7 @@ function regles_page(n) {
 }
 
 function regles_show(b){
-    regles_page("1");
+    regles_page("0");
     if(b){
         document.getElementById("regles").style.display = "block";
     } else {
@@ -43,7 +47,6 @@ function makeid(length) {
 
 var BASE_URL = "https://www.dekefake.duckdns.org:63551";
 
-// TODO : API
 async function sauvegarder() {
     var _partie_data = {
         'plateau_jeu': plateau_jeu,
@@ -138,7 +141,7 @@ async function charger_partie(pt_id) {
     interface_graphique();
 }
 
-
+document.getElementById("help_page0").addEventListener("click", function(){regles_page('0')});
 document.getElementById("help_page1").addEventListener("click", function(){regles_page('1')});
 document.getElementById("help_page2").addEventListener("click", function(){regles_page('2')});
 document.getElementById("help_page3").addEventListener("click", function(){regles_page('3')});
@@ -894,4 +897,10 @@ $(document).ready(function(){
     });
 
     $('input[type="radio"]').trigger('change');
+
+    var afficher_tuto = JS_COOKIES.get('afficher_tuto');
+    if(!afficher_tuto) {
+        JS_COOKIES.set('afficher_tuto','true');
+        $('#help_panel').trigger('click');
+    }
 })
